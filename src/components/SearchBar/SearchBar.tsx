@@ -1,3 +1,4 @@
+import { useCallback, useRef } from "react";
 import { SearchContainer, SearchInput } from "./styles";
 
 export default function SearchBar({
@@ -9,11 +10,14 @@ export default function SearchBar({
   onChange: (value: string) => void;
   onSearch: () => void;
 }) {
-  function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
-    if (event.key === "Enter") {
-      onSearch();
-    }
-  }
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Enter") {
+        onSearch();
+      }
+    },
+    [onSearch]
+  );
 
   return (
     <SearchContainer>

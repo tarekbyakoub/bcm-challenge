@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tabs, Tab } from "react-bootstrap";
+import { Tab } from "react-bootstrap";
 import { StyledTabs } from "./styles";
 
 type TabComponentProps = {
@@ -8,6 +8,14 @@ type TabComponentProps = {
 
 const TabsComponent: React.FC<TabComponentProps> = ({ onSelectTab }) => {
   const [activeTab, setActiveTab] = useState("allAssets");
+
+  const tabNames = [
+    { eventKey: "allAssets", title: "All Assets" },
+    { eventKey: "favorites", title: "Favorites" },
+    { eventKey: "staking", title: "Staking" },
+    { eventKey: "gainers", title: "Gainers" },
+    { eventKey: "losers", title: "Losers" },
+  ];
 
   const handleTabChange = (tabName: string | null) => {
     if (tabName !== null) {
@@ -22,11 +30,13 @@ const TabsComponent: React.FC<TabComponentProps> = ({ onSelectTab }) => {
       onSelect={handleTabChange}
       variant="pills"
     >
-      <Tab eventKey="allAssets" title="All Assets" />
-      <Tab eventKey="favorites" title="Favorites" />
-      <Tab eventKey="staking" title="Staking" />
-      <Tab eventKey="gainers" title="Gainers" />
-      <Tab eventKey="losers" title="Losers" />
+      {tabNames.map((tabName) => (
+        <Tab
+          key={tabName.eventKey}
+          eventKey={tabName.eventKey}
+          title={tabName.title}
+        />
+      ))}
     </StyledTabs>
   );
 };

@@ -4,10 +4,8 @@ import { CryptoCurrency } from "./CryptoItem";
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-
+  grid-template-columns: 200px repeat(3, 1fr) 0.2fr;
   gap: 10px;
-  padding: 10px;
   background-color: #fff;
   font-weight: bold;
   overflow: hidden;
@@ -76,8 +74,8 @@ export const NameContainer = styled.div`
   }
 `;
 
-export const CryptoChange24 = styled.span<{ crypto: CryptoCurrency }>`
-  color: ${({ crypto }) => (crypto?.change24?.percentage > 0 ? "lime" : "red")};
+export const CryptoChange24 = styled.span<{ crypto: number }>`
+  color: ${({ crypto }) => (crypto > 0 ? "lime" : "red")};
 `;
 
 export const CryptoIcon = styled(Image)`

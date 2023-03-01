@@ -50,7 +50,7 @@ export default function CyptoItem(crypto: CryptoCurrency) {
         <span>{crypto.buyPrice.toFixed(4)}</span>
       </CryptoDataContainer>
       <CryptoDataContainer>
-        <CryptoChange24 crypto={crypto}>
+        <CryptoChange24 crypto={crypto.change24?.percentage}>
           {crypto.change24?.percentage > 0
             ? `+${crypto.change24?.percentage}%`
             : `${crypto.change24?.percentage}%`}

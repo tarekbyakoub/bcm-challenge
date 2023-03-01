@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import cryptoData from "../../pages/api/currencyJson.json";
 import CryptoItem, { CryptoCurrency } from "../CryptoItem/CryptoItem";
 import SearchBar from "../SearchBar/SearchBar";
@@ -30,23 +30,14 @@ export default function CryptoList() {
     setPageNumber(0);
   }, [searchTerm]);
 
-  function handleSort(criteria: string) {
-    if (criteria === sortCriteria) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
-    } else {
-      setSortCriteria(criteria);
-      setSortDirection("asc");
-    }
-  }
-
   const sortedCryptos = cryptos
     .filter(
       (crypto) =>
         crypto.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         crypto.ticker.toLowerCase().includes(searchTerm.toLowerCase())
     )
-    .sort((a: any, b: any) => {
-      let sortValue;
+    .sort((a: CryptoCurrency, b: CryptoCurrency) => {
+      let sortValue = 0;
       if (sortCriteria === "name") {
         sortValue = a.name.localeCompare(b.name);
       } else if (sortCriteria === "buyPrice") {
@@ -69,13 +60,25 @@ export default function CryptoList() {
   const pageRangeDisplayed =
     pageNumber === 0 ? 5 : pageNumber == 1 ? 5 : pageNumber === 2 || 3 ? 4 : 5;
 
-  function handlePageClick({ selected }: { selected: number }) {
-    setPageNumber(selected + 1);
-  }
+  const handleSort = useCallback(
+    (criteria: string) => {
+      if (criteria === sortCriteria) {
+        setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+      } else {
+        setSortCriteria(criteria);
+        setSortDirection("asc");
+      }
+    },
+    [sortCriteria, sortDirection]
+  );
 
-  function handleSearch() {
+  const handlePageClick = useCallback(({ selected }: { selected: number }) => {
+    setPageNumber(selected + 1);
+  }, []);
+
+  const handleSearch = useCallback(() => {
     setPageNumber(0);
-  }
+  }, []);
 
   return (
     <Container className="container">

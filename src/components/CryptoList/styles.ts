@@ -9,7 +9,7 @@ export const TitleContainer = styled.div`
 `;
 
 export const InnerContainer = styled.div`
-  max-width: 668px;
+  width: 668px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -24,7 +24,7 @@ export const InnerContainer = styled.div`
 
 export const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 200px repeat(3, 1fr) 0.2fr;
   gap: 10px;
   background-color: #fff;
   font-weight: bold;
