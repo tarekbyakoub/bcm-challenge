@@ -52,9 +52,9 @@ export const GridContainer = styled.div`
 export const CryptoContainer = styled.div`
   display: flex;
   align-items: center;
-  overflow: hidden;
+
   :hover {
-    overflow: visible;
+    cursor: pointer;
   }
 `;
 
@@ -64,8 +64,14 @@ export const NameContainer = styled.div`
   flex-direction: column;
 
   > span:nth-of-type(1) {
+    font-weight: 600;
     @media screen and (max-width: 744px) {
       display: none;
+    }
+  }
+  > span:nth-of-type(2) {
+    @media screen and (max-width: 744px) {
+      font-weight: 600;
     }
   }
 `;

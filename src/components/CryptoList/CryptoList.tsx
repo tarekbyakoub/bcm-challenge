@@ -53,8 +53,8 @@ export default function CryptoList() {
         sortValue = a.buyPrice - b.buyPrice;
       } else if (sortCriteria === "change24") {
         sortValue = a.change24.percentage - b.change24.percentage;
-      } else if (sortCriteria === "volume") {
-        sortValue = a.volume - b.volume;
+      } else if (sortCriteria === "market") {
+        sortValue = a.volume * a.buyPrice - b.volume * b.buyPrice;
       }
 
       if (sortDirection === "desc") {
@@ -111,7 +111,7 @@ export default function CryptoList() {
 
           <SortButton
             className="text-left"
-            onClick={() => handleSort("volume")}
+            onClick={() => handleSort("market")}
           >
             <p>Market</p>
           </SortButton>

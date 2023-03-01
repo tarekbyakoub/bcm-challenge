@@ -9,32 +9,7 @@ const fontSans = FontSans({
   display: "swap",
 });
 
-export const theme: DefaultTheme = {
-  colors: {
-    primary: "#1a1a1a",
-    secondary: "#e6e6e6",
-    accent: "#ff6600",
-    background: "#f5f5f5",
-  },
-  typography: {
-    font: "'Montserrat', sans-serif",
-    size: "16px",
-    weight: {
-      regular: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 700,
-    },
-  },
-  spacing: {
-    xxs: "4px",
-    xs: "8px",
-    sm: "16px",
-    md: "24px",
-    lg: "32px",
-    xl: "48px",
-  },
-};
+export const theme: DefaultTheme = {};
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

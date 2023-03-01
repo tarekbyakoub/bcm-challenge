@@ -41,9 +41,9 @@ export default function CyptoItem(crypto: CryptoCurrency) {
           height={36}
           alt={`${crypto.name} logo`}
         />
-        <NameContainer>
-          <span>{crypto.name}</span>
-          <span>{crypto.ticker}</span>
+        <NameContainer className="name-container">
+          <span className="crypto-name">{crypto.name}</span>
+          <span className="crypto-ticker">{crypto.ticker}</span>
         </NameContainer>
       </CryptoContainer>
       <CryptoDataContainer>
@@ -57,9 +57,7 @@ export default function CyptoItem(crypto: CryptoCurrency) {
         </CryptoChange24>
       </CryptoDataContainer>
       <CryptoDataContainer>
-        <span>
-          {(crypto.volume * crypto.buyPrice).toFixed(2).toLocaleString()}
-        </span>
+        <span>{(crypto.volume * crypto.buyPrice).toFixed(2)}</span>
       </CryptoDataContainer>
       <AiOutlineStar className="star-icon" />
     </GridContainer>
