@@ -65,9 +65,11 @@ export default function CryptoList() {
 
   const offset = pageNumber * perPage;
   const currentPageData = sortedCryptos.slice(offset, offset + perPage);
+  const pageRangeDisplayed =
+    pageNumber === 0 ? 5 : pageNumber == 1 ? 5 : pageNumber === 2 || 3 ? 4 : 5;
 
   function handlePageClick({ selected }: { selected: number }) {
-    setPageNumber(selected);
+    setPageNumber(selected + 1);
   }
 
   function handleSearch() {
@@ -100,7 +102,7 @@ export default function CryptoList() {
             className="text-left"
             onClick={() => handleSort("change24")}
           >
-            <p>24h Change</p>
+            <p>24h%</p>
           </SortButton>
 
           <SortButton
@@ -117,7 +119,7 @@ export default function CryptoList() {
           <Pagination
             pageCount={Math.ceil(sortedCryptos.length / perPage)}
             marginPagesDisplayed={0}
-            pageRangeDisplayed={5}
+            pageRangeDisplayed={pageRangeDisplayed}
             onPageChange={handlePageClick}
             containerClassName="pagination"
             activeClassName="active"

@@ -3,7 +3,12 @@ import styled from "styled-components";
 export const SearchContainer = styled.div`
   display: flex;
   align-items: center;
+  margin: 0 auto;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 744px) {
+    width: 100%;
+  }
 `;
 
 export const SearchInput = styled.input`

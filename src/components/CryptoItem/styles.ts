@@ -5,6 +5,7 @@ import { CryptoCurrency } from "./CryptoItem";
 export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
   gap: 10px;
   padding: 10px;
   background-color: #fff;
@@ -20,6 +21,7 @@ export const GridContainer = styled.div`
     margin: 0 auto;
     height: 70px;
     padding: 0;
+    width: 100vw;
   }
 
   > span:nth-of-type(1) {
@@ -77,7 +79,10 @@ export const CryptoDataContainer = styled.div`
   display: flex;
   align-items: center;
   place-self: center;
-  :last-of-type {
-    display: none;
+
+  @media screen and (max-width: 744px) {
+    :last-of-type {
+      display: none;
+    }
   }
 `;

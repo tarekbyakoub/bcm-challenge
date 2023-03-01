@@ -21,7 +21,6 @@ const TabsComponent: React.FC<TabComponentProps> = ({ onSelectTab }) => {
       activeKey={activeTab}
       onSelect={handleTabChange}
       variant="pills"
-      className="justify-content-center"
     >
       <Tab eventKey="allAssets" title="All Assets" />
       <Tab eventKey="favorites" title="Favorites" />

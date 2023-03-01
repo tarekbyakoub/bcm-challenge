@@ -10,6 +10,14 @@ export const StyledTabs = styled(Tabs)`
   margin-bottom: 4vh;
   padding: 0;
 
+  @media screen and (max-width: 744px) {
+    max-width: 100vw;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .nav-link {
     border: none;
     background-color: #fff;

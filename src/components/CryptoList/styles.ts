@@ -1,24 +1,17 @@
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: #f4f5f6;
-  @media screen and (max-width: 744px) {
-    width: 100vw;
-  }
-`;
-
 export const InnerContainer = styled.div`
-  max-width: 1200px;
-  min-width: 744px;
+  max-width: 668px;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 
   @media screen and (max-width: 744px) {
-    padding: 24px 32px;
+    height: 100vh;
+    width: 100vw;
+    padding: auto;
   }
 `;
 
@@ -29,12 +22,25 @@ export const GridContainer = styled.div`
   padding: 10px;
   background-color: #fff;
   font-weight: bold;
-  border-radius: 8px;
   overflow: hidden;
   text-overflow: clip;
+  border-bottom: 1px solid #e5e5e5;
 
   @media screen and (max-width: 744px) {
     grid-template-columns: repeat(4, 1fr);
+    width: 100vw;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  > button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 8px;
+    p {
+      margin: 0;
+    }
   }
 
   > button:nth-of-type(1) {
@@ -85,7 +91,7 @@ export const SortButton = styled.button`
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  margin: 24px auto;
 `;
 
 export const Pagination = styled(ReactPaginate)`
@@ -93,6 +99,7 @@ export const Pagination = styled(ReactPaginate)`
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  margin-top: 24px;
 
   li {
     margin: 0 5px;
@@ -123,11 +130,11 @@ export const Pagination = styled(ReactPaginate)`
   }
 
   .break {
-    visibility: hidden;
+    display: none;
   }
 
   .previous,
   .next {
-    visibility: hidden;
+    display: none;
   }
 `;

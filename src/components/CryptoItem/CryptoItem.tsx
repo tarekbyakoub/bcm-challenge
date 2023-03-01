@@ -33,7 +33,7 @@ export interface CryptoCurrency {
 
 export default function CyptoItem(crypto: CryptoCurrency) {
   return (
-    <GridContainer className="grid-container">
+    <GridContainer className="grid-container crypto-item">
       <CryptoContainer>
         <CryptoIcon
           src={crypto.logo}
