@@ -47,7 +47,7 @@ export default function CyptoItem(crypto: CryptoCurrency) {
         </NameContainer>
       </CryptoContainer>
       <CryptoDataContainer>
-        <span>{crypto.buyPrice.toFixed(7)}</span>
+        <span>{crypto.buyPrice.toFixed(4)}</span>
       </CryptoDataContainer>
       <CryptoDataContainer>
         <CryptoChange24 crypto={crypto}>

@@ -1,6 +1,13 @@
 import ReactPaginate from "react-paginate";
 import styled from "styled-components";
 
+export const TitleContainer = styled.div`
+  place-self: flex-start;
+  @media screen and (max-width: 744px) {
+    display: none;
+  }
+`;
+
 export const InnerContainer = styled.div`
   max-width: 668px;
   margin: 0 auto;
@@ -19,11 +26,9 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
-  padding: 10px;
   background-color: #fff;
   font-weight: bold;
   overflow: hidden;
-  text-overflow: clip;
   border-bottom: 1px solid #e5e5e5;
 
   @media screen and (max-width: 744px) {

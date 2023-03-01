@@ -10,6 +10,7 @@ import {
   Pagination,
   PaginationContainer,
   SortButton,
+  TitleContainer,
 } from "./styles";
 
 export default function CryptoList() {
@@ -78,6 +79,9 @@ export default function CryptoList() {
 
   return (
     <Container className="container">
+      <TitleContainer className="title-container">
+        <h1>Trade</h1>
+      </TitleContainer>
       <InnerContainer className="inner-container">
         <h1>Categories</h1>
         <SearchBar

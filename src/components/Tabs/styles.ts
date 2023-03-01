@@ -7,7 +7,7 @@ export const StyledTabs = styled(Tabs)`
   align-items: center;
   border-bottom: none;
   list-style: none;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
   padding: 0;
 
   @media screen and (max-width: 744px) {
@@ -23,8 +23,8 @@ export const StyledTabs = styled(Tabs)`
     background-color: #fff;
     color: #6d7589;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: 14px;
+    line-height: 14.7px;
     letter-spacing: 1px;
     padding: 12px;
     border-radius: 38px;
@@ -36,6 +36,12 @@ export const StyledTabs = styled(Tabs)`
     &.active {
       background-color: #2e333f;
       color: #fff;
+    }
+  }
+
+  button {
+    :first-of-type {
+      width: 102px;
     }
   }
 `;

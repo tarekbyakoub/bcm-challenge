@@ -52,6 +52,10 @@ export const GridContainer = styled.div`
 export const CryptoContainer = styled.div`
   display: flex;
   align-items: center;
+  overflow: hidden;
+  :hover {
+    overflow: visible;
+  }
 `;
 
 export const NameContainer = styled.div`
