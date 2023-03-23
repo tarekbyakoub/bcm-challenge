@@ -93,7 +93,7 @@ export default function CryptoList() {
           onSearch={handleSearch}
         />
         <TabsComponent
-          onSelectTab={(tabName: string) => setActiveTab(tabName)} // set activeTab state when tab is clicked
+          onSelectTab={(tabName: string) => setActiveTab(tabName)}
         />
         <GridContainer className="grid-container">
           <SortButton className="text-left" onClick={() => handleSort("name")}>
